@@ -1,7 +1,11 @@
 const fs = require('fs');
+const exress = require('express');
+const route = exress.Router();
 const path = './log.json';
 
-module.exports = (req,res,next) => {
+route.all('*',logger);
+
+function logger(req,res,next){
     let info = {
         date: new Date(),
         path: req.path,
@@ -17,3 +21,5 @@ module.exports = (req,res,next) => {
         next();
     })
 }
+
+module.exports = route;

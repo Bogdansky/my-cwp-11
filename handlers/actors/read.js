@@ -23,7 +23,7 @@ function compareActors(first, second){
     return first.liked - second.liked;
 }
 
-module.exports.getActorById = function getActor(actors, id){
+function getActor(actors, id){
     let soughtFor;
     actors.forEach(actor => {
         if (actor.id == id){
@@ -40,3 +40,4 @@ function callError(err){
     }
 }
 
+module.exports.getActorById = getActor;

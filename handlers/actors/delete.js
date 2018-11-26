@@ -6,7 +6,7 @@ const getActorById = require('./read').getActorById;
 
 module.exports = (req, res, next) => {
     deleteActor(req);
-    fs.writeFile(path, JSON.stringify(deleteActor(req)), (err) => {
+    fs.writeFile(path, JSON.stringify(deleteActor(req), '', 3), (err) => {
         if (err){ 
             throw err;
         }
